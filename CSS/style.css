@@ -7,6 +7,14 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #06284d;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+  padding: 0 40px;
 }
 
 .topo {
@@ -117,4 +125,259 @@ nav .ativo {
   background: white;
   color: #06284d;
   border: 2px solid #06284d;
+}
+
+/* BENEFÍCIOS */
+
+.beneficios {
+  padding: 70px 0;
+  background: white;
+  text-align: center;
+}
+
+.beneficios h2,
+.passos h2,
+.clientes h2 {
+  font-size: clamp(26px, 3vw, 42px);
+  color: #06284d;
+  font-weight: 900;
+}
+
+.linha {
+  width: 70px;
+  height: 4px;
+  background: #ffc400;
+  margin: 15px auto 45px;
+  border-radius: 20px;
+}
+
+.cards-beneficios {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.card {
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 32px 24px;
+  background: white;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.icone {
+  width: 75px;
+  height: 75px;
+  background: #edf7ef;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 22px;
+
+  font-size: 34px;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #06284d;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* PASSOS */
+
+.passos {
+  padding: 70px 0;
+  background: #f5f8fc;
+  text-align: center;
+}
+
+.etapas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+.etapa {
+  position: relative;
+}
+
+.numero {
+  width: 55px;
+  height: 55px;
+  background: #ffc400;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 22px;
+
+  font-size: 24px;
+  font-weight: bold;
+  color: #06284d;
+}
+
+.icone-passo {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.etapa h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #06284d;
+}
+
+.etapa p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* CLIENTES */
+
+.clientes {
+  padding: 70px 0;
+  background: white;
+  text-align: center;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+
+  margin-bottom: 45px;
+}
+
+.logos span {
+  font-size: clamp(26px, 2vw, 40px);
+  font-weight: bold;
+  color: #2d5fa8;
+}
+
+.depoimentos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 22px;
+}
+
+.depoimento {
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 28px;
+  text-align: left;
+  background: white;
+}
+
+.depoimento p {
+  margin: 15px 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.depoimento strong {
+  color: #06284d;
+  font-size: 15px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1100px) {
+
+  .cards-beneficios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .container {
+    padding: 0 25px;
+  }
+
+  .beneficios,
+  .passos,
+  .clientes {
+    padding: 55px 0;
+  }
+
+  .card {
+    padding: 28px 20px;
+  }
+
+  .etapas {
+    gap: 50px;
+  }
+
+  .logos {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .container {
+    padding: 0 18px;
+  }
+
+  .beneficios h2,
+  .passos h2,
+  .clientes h2 {
+    font-size: 24px;
+  }
+
+  .card h3,
+  .etapa h3 {
+    font-size: 20px;
+  }
+
+  .card p,
+  .etapa p,
+  .depoimento p {
+    font-size: 15px;
+  }
+
+  .depoimentos {
+    grid-template-columns: 1fr;
+  }
+
+  .logos span {
+    font-size: 24px;
+  }
+
+  .icone {
+    width: 65px;
+    height: 65px;
+    font-size: 28px;
+  }
+
+  .icone-passo {
+    font-size: 42px;
+  }
+
+  .cards-beneficios {
+    grid-template-columns: 1fr;
+  }
+
 }
