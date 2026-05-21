@@ -1,0 +1,76 @@
+/* Estilos para a barra superior */
+.barra_superior {
+    background-color: #122E4D;
+    color: white;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #122E4D;
+}
+
+/* estilos para a navegação dentro da barra superior */
+.barra_superior .opções {  
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.barra_superior .opções ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.barra_superior .opções {
+    list-style: none;
+    gap: 30px;
+    display: flex;
+}
+
+.barra_superior .opções a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.0em;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.barra_superior .opções a:hover {
+    color: #ffcc00;
+}
+
+.barra_superior .Botão_Orçamento button {
+    background-color: #ffcc00;
+    color: #122E4D;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.0em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Final_Página {
+    background-color: #122E4D;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #122E4D;
+}
+
+.Final_Página .navegação {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
