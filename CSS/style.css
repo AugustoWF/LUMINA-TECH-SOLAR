@@ -66,41 +66,6 @@ body {
   border-radius: 999px;
 }
 
-/* HEADER */
-
-.topo {
-  height: 82px;
-  padding: 0 40px;
-
-  background: var(--azul);
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  height: 100%;
-}
-
-.logo img {
-  height: 150px;
-  width: auto;
-
-  object-fit: contain;
-
-  display: block;
-}
-
-.logo:hover {
-  opacity: 0.9;
-  transition: var(--transition);
-}
-
 nav {
   display: flex;
   align-items: center;
@@ -182,11 +147,10 @@ button[type="submit"]:hover {
 }
 
 /* BANNER */
-
 .banner {
-  height: 420px;
+  height: 520px;
   padding: 20px 80px;
-
+  padding-top: 100px;
   display: flex;
   align-items: center;
 
@@ -470,117 +434,153 @@ textarea {
   resize: none;
 }
 
-/* RESPONSIVIDADE */
+/* PARTE DO CRISTIAN */
 
-@media (max-width: 1100px) {
+/* Estilos para a barra superior */
 
-  .cards-beneficios {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .etapas {
-    grid-template-columns: 1fr;
-  }
-
-  .orcamento {
-    flex-direction: column;
-  }
-
-  .parte-azul,
-  .formulario {
-    width: 100%;
-  }
+.barra_superior {
+    font-family: 'Arial', sans-serif;
+    background-color: #122E4D;
+    color: white;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #122E4D;
+    height: 90px;
 }
 
-@media (max-width: 900px) {
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-  .container {
-    padding: 0 25px;
-  }
+.logo img {
+  width: auto;
+}
 
-  .topo {
-    height: auto;
-    padding: 20px;
+.logo:hover {
+  opacity: 0.9;
+  transition: var(--transition);
+}
 
-    flex-wrap: wrap;
+/* NAV */
+.barra_superior .opçoes {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.barra_superior .opçoes a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.barra_superior .opçoes a:hover {
+    color: #ffcc00;
+}
+
+/* BOTÃO */
+.barra_superior .Botao_Orçamento button {
+    background-color: #ffcc00;
+    color: #122E4D;
+    border: none;
+    padding: 12px 26px;
+    font-size: 0.95em;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.barra_superior .Botao_Orçamento button:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 184, 0, 0.3);
+}
+
+.Final_Pagina {
+    font-family: 'Arial', sans-serif;
+    background-color: #122E4D;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #122E4D;
+}
+
+.Final_Pagina .navegaçao {
+    list-style: none;
+    display: flex;
     gap: 20px;
-  }
-
-  nav {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 18px;
-  }
-
-  .banner {
-    padding: 70px 35px;
-    min-height: auto;
-  }
-
-  .beneficios,
-  .passos,
-  .clientes {
-    padding: 55px 0;
-  }
-
-  .depoimentos {
-    grid-template-columns: 1fr;
-  }
+    flex-direction: column;
 }
 
-@media (max-width: 600px) {
+.Final_Pagina .navegaçao a:hover {
+    color: #ffcc00;
+}
 
-  .container {
-    padding: 0 18px;
-  }
+.Final_Pagina .navegaçao a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.0em;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
 
-  .banner {
-    min-height: 360px;
-    padding: 40px 22px;
-  }
 
-  .texto-banner {
-    max-width: 100%;
-  }
+.redes-sociais {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
 
-  .texto-banner h1 {
-    font-size: 36px;
-  }
-
-  .texto-banner p,
-  .card p,
-  .etapa p,
-  .depoimento p {
-    font-size: 15px;
-  }
-
-  .cards-beneficios,
-  .campos {
-    grid-template-columns: 1fr;
-  }
-
-  .botoes {
+.Final_Pagina .logo2 {
+    display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    
+}
+
+.Final_Pagina .logo2 p {
+     margin: 0;
+  font-size: 0.9em;
+  max-width: 200px;
+}
+
+@media (max-width: 768px) {
+
+  .barra_superior {
+    padding: 10px 12px;
+    height: auto;
+    gap: 10px;
   }
 
-  .botoes a {
-    width: 100%;
-    text-align: center;
+  .logo img {
+    width: 110px;
+    height: auto;
   }
 
-  .card h3,
-  .etapa h3 {
-    font-size: 20px;
+  .barra_superior .opçoes {
+    gap: 12px;
   }
 
-  .icone {
-    width: 65px;
-    height: 65px;
-
-    font-size: 28px;
+  .barra_superior .opçoes a {
+    font-size: 12px;
   }
 
-  .icone-passo {
-    font-size: 42px;
+  .barra_superior .Botao_Orçamento button {
+    padding: 6px 10px;
+    font-size: 10px;
+    white-space: nowrap;
+    transform: scale(0.85);
   }
 }
