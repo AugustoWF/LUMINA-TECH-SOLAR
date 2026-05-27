@@ -556,6 +556,10 @@ textarea {
   max-width: 200px;
 }
 
+.logo2 img {
+  width: 200px;
+}
+
 @media (max-width: 768px) {
 
   .barra_superior {
