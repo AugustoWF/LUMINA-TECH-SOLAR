@@ -1,5 +1,7 @@
 /* Estilos para a barra superior */
+
 .barra_superior {
+    font-family: 'Arial', sans-serif;
     background-color: #122E4D;
     color: white;
     padding: 10px 10px;
@@ -53,7 +55,13 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.barra_superior .Botão_Orçamento button:hover {
+    background-color: #e6b800;
+    color: white;
+}
+
 .Final_Página {
+    font-family: 'Arial', sans-serif;
     background-color: #122E4D;
     color: white;
     padding: 20px 40px;
@@ -67,10 +75,38 @@
     list-style: none;
     display: flex;
     gap: 20px;
+    flex-direction: column;
 }
+
+.Final_Página .navegação a:hover {
+    color: #ffcc00;
+}
+
+.Final_Página .navegação a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.0em;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
 
 .redes-sociais {
     display: flex;
     gap: 10px;
     align-items: center;
+}
+
+.Final_Página .logo2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    
+}
+
+.Final_Página .logo2 p {
+     margin: 0;
+  font-size: 0.9em;
+  max-width: 200px;
 }
