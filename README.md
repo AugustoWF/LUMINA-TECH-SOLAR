@@ -1,6 +1,8 @@
 # LUMINA-TECH-SOLAR
 
-Trabalho prático focado na experiência do usuário (UX) para a empresa fictícia Lumina Tech Solar, especializada em soluções inteligentes de energia fotovoltaica.
+Trabalho em equipe prático focado na experiência do usuário (UX) para a empresa fictícia Lumina Tech Solar, especializada em soluções inteligentes de energia fotovoltaica.
+
+Equipe: Augusto Wilbert Friedrichsen, Davi Bousfield Castelucci, Kauã Jefferson de Jesus, Cristian Müller Ribeiro
 
 ---
 
