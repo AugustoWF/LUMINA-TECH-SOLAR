@@ -6,7 +6,7 @@ Trabalho prático focado na experiência do usuário (UX) para a empresa fictíc
 
 ## 🚀 Como Visualizar o Projeto
 
-Você pode visualizar este site de duas maneiras: direto pelo navegador ou baixando os arquivos para rodar na sua máquina.
+Você pode visualizar este site baixando os arquivos para rodar na sua máquina.
 
 Baixe o repositório como arquivo `.zip` ou faça o clone via terminal:
    ```bash
