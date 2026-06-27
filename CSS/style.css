@@ -556,31 +556,419 @@ textarea {
   max-width: 200px;
 }
 
+/* Atualização Javascript */
+
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 40, 77, 0.65);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    width: 420px;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 16px;
+    padding: 35px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    animation: aparecer .35s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(-20px) scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.popup-content h2{
+    color:#06284d;
+    margin-bottom:10px;
+    font-size:30px;
+}
+
+.popup-content p{
+    color:#666;
+    margin-bottom:25px;
+    line-height:1.5;
+}
+
+.popup-content input{
+    width:100%;
+    padding:14px;
+    border:2px solid #dcdcdc;
+    border-radius:8px;
+    font-size:16px;
+    margin-bottom:20px;
+    transition:.3s;
+}
+
+.popup-content input:focus{
+    outline:none;
+    border-color:#ffc400;
+    box-shadow:0 0 10px rgba(255,196,0,.25);
+}
+
+#calcular{
+
+    width:100%;
+    padding:14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#ffc400;
+
+    color:#06284d;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#calcular:hover{
+    background:#e6b000;
+    transform:translateY(-2px);
+}
+
+#resultado{
+
+    margin:25px 0;
+
+    font-size:22px;
+
+    color:#18a957;
+
+    font-weight:bold;
+
+    min-height:30px;
+}
+
+#prosseguir{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#06284d;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#prosseguir:hover{
+    background:#0b3f73;
+}
+
+#fecharPopup{
+
+    position:absolute;
+
+    top:12px;
+
+    right:18px;
+
+    font-size:28px;
+
+    color:#888;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#fecharPopup:hover{
+    color:#06284d;
+}
+
+/* Modo Escuro - Feito por Cristian */
+
+
+/* Botão do Modo Escuro */
+.btn-dark-mode {
+  padding: 8px 16px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  transition: 0.3s;
+  list-style: none;
+}
+
+/* Efeito ao passar o mouse em cima do botão */
+.btn-dark-mode:hover {
+  background: white;
+  color: #122E4D;
+}
+
+/* Cor da Página */
+body.dark-mode,
+body.dark-mode .barra_superior,
+body.dark-mode .passos,
+body.dark-mode .parte-azul,
+body.dark-mode .Final_Pagina,
+body.dark-mode .popup-content{
+  background: #121212;
+  border-top: #121212;
+  border-bottom: #121212;
+  color: #e0e0e0;
+}
+
+/* Titulos */
+body.dark-mode .beneficios h2,
+body.dark-mode .passos h2,
+body.dark-mode .clientes h2 {
+  color: #e0e0e0;
+}
+
+/* Fundo da parte dos Cards */
+body.dark-mode .beneficios,
+body.dark-mode .clientes{
+  background: #1a1a1a;
+  border-top: #121212;
+}
+
+/* Fundo dos cards */
+body.dark-mode .card,
+body.dark-mode .depoimento,
+body.dark-mode #prosseguir {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+}
+
+body.dark-mode .card .icone{
+  background: #121212;
+}
+
+/* Letras do Card */
+
+body.dark-mode .card h3,
+body.dark-mode .etapa h3,
+body.dark-mode .popup-content h2 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .card p,
+body.dark-mode .etapa p {
+  color: #aaaaaa;
+}
+
+/* Banner da Página */
+body.dark-mode .banner {
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(18, 18, 18, 0.96) 0%,
+      rgba(18, 18, 18, 0.78) 35%,
+      rgba(18, 18, 18, 0.12) 65%
+    ),
+    url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80");
+}
+
+body.dark-mode .texto-banner h1 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .texto-banner p {
+  color: #bbbbbb;
+}
+
+
+/* Botão "Ver Beneficios" */
+body.dark-mode .btn-branco {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+/* Formulario */
+body.dark-mode .formulario {
+  background: #1e1e1e;
+}
+
+body.dark-mode .campos input,
+body.dark-mode textarea {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark-mode .campos input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #777;
+}
+
+/* Avaliação dos Clientes */
+body.dark-mode .depoimento p {
+  color: #cccccc;
+}
+
+body.dark-mode .depoimento strong {
+  color: #e0e0e0;
+}
+
 @media (max-width: 768px) {
 
+  /* HEADER */
   .barra_superior {
-    padding: 10px 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
     height: auto;
-    gap: 10px;
+    gap: 12px;
+    text-align: center;
   }
 
   .logo img {
-    width: 110px;
+    width: 120px;
     height: auto;
   }
 
+  /* NAV vira scroll horizontal (UX melhor) */
   .barra_superior .opçoes {
-    gap: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 14px;
+    padding: 5px 0;
+    max-width: 100%;
+  }
+
+  .barra_superior .opçoes::-webkit-scrollbar {
+    display: none;
   }
 
   .barra_superior .opçoes a {
     font-size: 12px;
+    white-space: nowrap;
   }
 
-  .barra_superior .Botao_Orçamento button {
-    padding: 6px 10px;
-    font-size: 10px;
-    white-space: nowrap;
-    transform: scale(0.85);
+  /* BOTÕES HEADER */
+  .Modo_Escuro,
+  .Botao_Orçamento {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .barra_superior .Botao_Orçamento button,
+  .btn-dark-mode {
+    width: 90%;
+    max-width: 260px;
+    padding: 10px 14px;
+    font-size: 13px;
+    transform: none;
+  }
+
+  /* BANNER */
+  .banner {
+    height: auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .texto-banner h1 {
+    font-size: 28px;
+  }
+
+  .texto-banner p {
+    font-size: 14px;
+  }
+
+  .botoes {
+    justify-content: center;
+  }
+
+  .btn-amarelo,
+  .btn-branco {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+
+  /* BENEFÍCIOS */
+  .cards-beneficios {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 24px 18px;
+  }
+
+  /* PASSOS */
+  .etapas {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  /* CLIENTES */
+  .logos {
+    gap: 20px;
+  }
+
+  .depoimentos {
+    grid-template-columns: 1fr;
+  }
+
+  /* ORÇAMENTO */
+  .orcamento {
+    flex-direction: column;
+  }
+
+  .parte-azul,
+  .formulario {
+    width: 100%;
+    padding: 25px 20px;
+  }
+
+  .campos {
+    grid-template-columns: 1fr;
+  }
+
+  /* FOOTER */
+  .Final_Pagina {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .Final_Pagina .navegaçao {
+    align-items: center;
+  }
+
+  .redes-sociais {
+    justify-content: center;
   }
 }
