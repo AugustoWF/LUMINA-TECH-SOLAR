@@ -1,19 +1,9 @@
+/* RESET */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #06284d;
-  background: #ffffff;
-  overflow-x: hidden;
-  line-height: 1.5;
 }
 
 /* VARIÁVEIS */
@@ -26,9 +16,28 @@ body {
   --cinza: #555;
   --borda: #e5e5e5;
   --branco: #ffffff;
+
+  --radius: 6px;
+  --radius-lg: 12px;
+
+  --transition: 0.3s;
+  --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* CONTAINER */
+/* BASE */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--branco);
+  color: var(--azul);
+
+  line-height: 1.5;
+  overflow-x: hidden;
+}
 
 .container {
   width: 100%;
@@ -51,41 +60,10 @@ body {
 .linha {
   width: 70px;
   height: 4px;
+  margin: 15px auto 45px;
+
   background: var(--amarelo);
   border-radius: 999px;
-  margin: 15px auto 45px;
-}
-
-/* HEADER */
-
-.topo {
-  height: 82px;
-  background: var(--azul);
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 40px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  color: var(--branco);
-  font-size: 32px;
-}
-
-.logo h2 {
-  font-size: 25px;
-  line-height: 22px;
-}
-
-.logo span {
-  font-size: 15px;
-  font-weight: bold;
 }
 
 nav {
@@ -96,10 +74,12 @@ nav {
 
 nav a {
   color: var(--branco);
+
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
-  transition: 0.3s;
+
+  transition: var(--transition);
 }
 
 nav a:hover,
@@ -107,44 +87,84 @@ nav .ativo {
   color: var(--amarelo);
 }
 
-.btn-topo {
-  background: var(--amarelo);
-  color: var(--azul);
+/* BOTÕES */
 
-  padding: 15px 32px;
-  border-radius: 6px;
-
-  text-decoration: none;
+.btn-topo,
+.btn-amarelo,
+.btn-branco,
+button[type="submit"] {
+  border-radius: var(--radius);
   font-weight: bold;
-
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
-.btn-topo:hover {
+.btn-topo,
+.btn-amarelo {
+  background: var(--amarelo);
+  color: var(--azul);
+}
+
+.btn-topo {
+  padding: 15px 32px;
+  text-decoration: none;
+}
+
+.btn-amarelo,
+.btn-branco {
+  padding: 14px 24px;
+
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-branco {
+  background: var(--branco);
+  color: var(--azul);
+  border: 2px solid var(--azul);
+}
+
+.btn-topo:hover,
+.btn-amarelo:hover,
+.btn-branco:hover {
   transform: translateY(-2px);
 }
 
-/* BANNER */
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
 
+  border: none;
+  cursor: pointer;
+
+  background: var(--amarelo);
+  color: #1a1a1a;
+
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background: #e6b000;
+}
+
+/* BANNER */
 .banner {
-  height: 420px;
+  height: 520px;
+  padding: 20px 80px;
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
 
   background-image:
     linear-gradient(
       to right,
-      rgba(255,255,255,0.96) 0%,
-      rgba(255,255,255,0.78) 35%,
-      rgba(255,255,255,0.12) 65%
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.78) 35%,
+      rgba(255, 255, 255, 0.12) 65%
     ),
     url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80");
 
   background-size: cover;
   background-position: center;
-
-  display: flex;
-  align-items: center;
-
-  padding: 20px 80px;
 }
 
 .texto-banner h1 {
@@ -159,10 +179,10 @@ nav .ativo {
 .texto-banner p {
   margin-top: 14px;
 
+  color: var(--azul);
+
   font-size: 16px;
   line-height: 1.5;
-
-  color: var(--azul);
 }
 
 .botoes {
@@ -170,43 +190,28 @@ nav .ativo {
   flex-wrap: wrap;
   gap: 14px;
 
-  margin-top: 20    px;
+  margin-top: 20px;
 }
 
-.botoes a {
-  padding: 14px 24px;
+/* SEÇÕES */
 
-  border-radius: 6px;
-
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-
-  transition: 0.3s;
-}
-
-.btn-amarelo {
-  background: var(--amarelo);
-  color: var(--azul);
-}
-
-.btn-branco {
-  background: var(--branco);
-  color: var(--azul);
-  border: 2px solid var(--azul);
-}
-
-.btn-amarelo:hover,
-.btn-branco:hover {
-  transform: translateY(-2px);
-}
-
-/* BENEFÍCIOS */
-
-.beneficios {
+.beneficios,
+.passos,
+.clientes {
   padding: 70px 0;
+}
+
+.beneficios,
+.clientes {
   background: var(--branco);
 }
+
+.passos {
+  background: var(--azul-claro);
+  text-align: center;
+}
+
+/* CARDS */
 
 .cards-beneficios {
   display: grid;
@@ -214,123 +219,107 @@ nav .ativo {
   gap: 22px;
 }
 
-.card {
-  padding: 32px 24px;
-
+.card,
+.depoimento {
   background: var(--branco);
 
   border: 1px solid var(--borda);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
+}
+
+.card {
+  padding: 32px 24px;
 
   text-align: center;
 
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-hover);
 }
 
 .icone {
   width: 75px;
   height: 75px;
-
-  background: #edf7ef;
-  border-radius: 50%;
+  margin: 0 auto 22px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin: 0 auto 22px;
+  background: #edf7ef;
+  border-radius: 50%;
 
   font-size: 34px;
 }
 
-.card h3 {
-  font-size: 24px;
+.card h3,
+.etapa h3 {
   margin-bottom: 12px;
+
   color: var(--azul);
+  font-size: 24px;
 }
 
-.card p {
+.card p,
+.etapa p {
+  color: var(--cinza);
+
   font-size: 16px;
   line-height: 1.6;
-  color: var(--cinza);
 }
 
 /* PASSOS */
 
-.passos {
-  padding: 70px 0;
-  background: var(--azul-claro);
-  text-align: center;
-}
-
 .etapas {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  justify-content: center;
 }
 
 .numero {
   width: 55px;
   height: 55px;
+  margin: 0 auto 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background: var(--amarelo);
   border-radius: 50%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: 0 auto 22px;
+  color: var(--azul);
 
   font-size: 24px;
   font-weight: bold;
-
-  color: var(--azul);
 }
 
 .icone-passo {
-  font-size: 50px;
   margin-bottom: 20px;
-}
-
-.etapa h3 {
-  font-size: 24px;
-  margin-bottom: 12px;
-}
-
-.etapa p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--cinza);
+  font-size: 50px;
 }
 
 /* CLIENTES */
 
-.clientes {
-  padding: 70px 0;
-  background: var(--branco);
-}
-
 .logos {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-
   gap: 50px;
 
   margin-bottom: 45px;
 }
 
 .logos span {
+  color: #2d5fa8;
+
   font-size: clamp(26px, 2vw, 40px);
   font-weight: bold;
-  color: #2d5fa8;
 }
 
 .depoimentos {
@@ -341,24 +330,20 @@ nav .ativo {
 
 .depoimento {
   padding: 28px;
-
-  border: 1px solid var(--borda);
-  border-radius: 10px;
-
-  background: var(--branco);
 }
 
 .depoimento p {
   margin: 15px 0;
 
+  color: #333;
+
   font-size: 17px;
   line-height: 1.7;
-
-  color: #333;
 }
 
 .depoimento strong {
   color: var(--azul);
+
   font-size: 15px;
 }
 
@@ -369,16 +354,26 @@ nav .ativo {
   min-height: 450px;
 }
 
-.parte-azul {
-  width: 40%;
-
-  background: var(--azul);
-
+.parte-azul,
+.formulario {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
 
+.parte-azul {
+  width: 40%;
   padding: 50px 45px;
+
+  background: var(--azul);
+}
+
+.formulario {
+  width: 60%;
+  padding: 45px;
+  gap: 15px;
+
+  background: #f7f7f7;
 }
 
 .mensagem-parte-azul {
@@ -394,13 +389,14 @@ nav .ativo {
 }
 
 .outra-mensagem-parte-azul {
-  margin-top: 30px;
-
   display: flex;
   align-items: flex-start;
   gap: 15px;
 
+  margin-top: 30px;
+
   color: var(--branco);
+
   font-size: 17px;
   line-height: 1.7;
 }
@@ -410,18 +406,7 @@ nav .ativo {
   flex-shrink: 0;
 }
 
-.formulario {
-  width: 60%;
-
-  background: #f7f7f7;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  padding: 45px;
-  gap: 15px;
-}
+/* FORMULÁRIO */
 
 .campos {
   display: grid;
@@ -432,16 +417,16 @@ nav .ativo {
 .campos input,
 textarea {
   width: 100%;
-
   padding: 14px 15px;
 
-  border: 1px solid #d9d9d9;
-  border-radius: 6px;
+  background: var(--branco);
 
-  font-size: 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: var(--radius);
+
   outline: none;
 
-  background: var(--branco);
+  font-size: 14px;
 }
 
 textarea {
@@ -449,145 +434,158 @@ textarea {
   resize: none;
 }
 
-button[type="submit"] {
-  width: 100%;
+/* PARTE DO CRISTIAN */
 
-  background: var(--amarelo);
-  color: #1a1a1a;
+/* Estilos para a barra superior */
 
-  padding: 15px;
-
-  border: none;
-  border-radius: 6px;
-
-  font-size: 16px;
-  font-weight: bold;
-
-  cursor: pointer;
-
-  transition: 0.3s;
+.barra_superior {
+    font-family: 'Arial', sans-serif;
+    background-color: #122E4D;
+    color: white;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #122E4D;
+    height: 90px;
 }
 
-button[type="submit"]:hover {
-  background: #e6b000;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* RESPONSIVIDADE */
-
-@media (max-width: 1100px) {
-
-  .cards-beneficios {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .etapas {
-    grid-template-columns: 1fr;
-  }
-
-  .orcamento {
-    flex-direction: column;
-  }
-
-  .parte-azul,
-  .formulario {
-    width: 100%;
-  }
+.logo img {
+  width: auto;
 }
 
-@media (max-width: 900px) {
+.logo:hover {
+  opacity: 0.9;
+  transition: var(--transition);
+}
 
-  .container {
-    padding: 0 25px;
-  }
+/* NAV */
+.barra_superior .opçoes {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
 
-  .topo {
-    flex-wrap: wrap;
-    height: auto;
+.barra_superior .opçoes a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.barra_superior .opçoes a:hover {
+    color: #ffcc00;
+}
+
+/* BOTÃO */
+.barra_superior .Botao_Orçamento button {
+    background-color: #ffcc00;
+    color: #122E4D;
+    border: none;
+    padding: 12px 26px;
+    font-size: 0.95em;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.barra_superior .Botao_Orçamento button:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 184, 0, 0.3);
+}
+
+.Final_Pagina {
+    font-family: 'Arial', sans-serif;
+    background-color: #122E4D;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #122E4D;
+}
+
+.Final_Pagina .navegaçao {
+    list-style: none;
+    display: flex;
     gap: 20px;
-    padding: 20px;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-  }
-
-  .banner {
-    min-height: auto;
-    padding: 70px 35px;
-  }
-
-  .beneficios,
-  .passos,
-  .clientes {
-    padding: 55px 0;
-  }
-
-  .depoimentos {
-    grid-template-columns: 1fr;
-  }
+    flex-direction: column;
 }
 
-@media (max-width: 600px) {
+.Final_Pagina .navegaçao a:hover {
+    color: #ffcc00;
+}
 
-  .container {
-    padding: 0 18px;
-  }
+.Final_Pagina .navegaçao a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.0em;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
 
-  .banner {
-    min-height: 360px;
-    padding: 40px 22px;
-  }
 
-  .texto-banner {
-    max-width: 100%;
-  }
+.redes-sociais {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
 
-  .texto-banner h1 {
-    font-size: 36px;
-  }
-
-  .texto-banner p {
-    font-size: 15px;
-  }
-
-  .cards-beneficios {
-    grid-template-columns: 1fr;
-  }
-
-  .campos {
-    grid-template-columns: 1fr;
-  }
-
-  .botoes {
+.Final_Pagina .logo2 {
+    display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    
+}
+
+.Final_Pagina .logo2 p {
+     margin: 0;
+  font-size: 0.9em;
+  max-width: 200px;
+}
+
+.logo2 img {
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+
+  .barra_superior {
+    padding: 10px 12px;
+    height: auto;
+    gap: 10px;
   }
 
-  .botoes a {
-    width: 100%;
-    text-align: center;
+  .logo img {
+    width: 110px;
+    height: auto;
   }
 
-  .card h3,
-  .etapa h3 {
-    font-size: 20px;
+  .barra_superior .opçoes {
+    gap: 12px;
   }
 
-  .card p,
-  .etapa p,
-  .depoimento p {
-    font-size: 15px;
+  .barra_superior .opçoes a {
+    font-size: 12px;
   }
 
-  .icone {
-    width: 65px;
-    height: 65px;
-    font-size: 28px;
-  }
-
-  .icone-passo {
-    font-size: 42px;
+  .barra_superior .Botao_Orçamento button {
+    padding: 6px 10px;
+    font-size: 10px;
+    white-space: nowrap;
+    transform: scale(0.85);
   }
 }
 
