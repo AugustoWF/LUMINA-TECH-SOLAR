@@ -9,8 +9,8 @@
 /* VARIÁVEIS */
 
 :root {
-  --azul: #06284d;
-  --azul-claro: #f5f8fc;
+  --azul: linear-gradient(to right, #000000, #122E4D);
+  --azul-claro: linear-gradient(to right, #122E4D, #2b69b1);
   --amarelo: #ffc400;
   --verde: #18a957;
   --cinza: #555;
@@ -32,7 +32,7 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--branco);
+  background: linear-gradient(to right, #ececec, #ffffff);
   color: var(--azul);
 
   line-height: 1.5;
@@ -49,11 +49,17 @@ body {
 /* TÍTULOS */
 
 .beneficios h2,
-.passos h2,
 .clientes h2 {
   font-size: clamp(26px, 3vw, 42px);
   font-weight: 900;
-  color: var(--azul);
+  color: black;
+  text-align: center;
+}
+
+.passos h2{
+  color: var(--branco);
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: 900;
   text-align: center;
 }
 
@@ -203,12 +209,17 @@ button[type="submit"]:hover {
 
 .beneficios,
 .clientes {
-  background: var(--branco);
+  background: linear-gradient(to right, #ececec, #ffffff);
 }
 
 .passos {
   background: var(--azul-claro);
   text-align: center;
+  color: var(--branco);
+}
+
+.passos p{
+  color: var(--branco);
 }
 
 /* CARDS */
@@ -263,9 +274,15 @@ button[type="submit"]:hover {
   font-size: 24px;
 }
 
-.card p,
-.etapa p {
+.card p{
   color: var(--cinza);
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.etapa p {
+  color: var(--branco);
 
   font-size: 16px;
   line-height: 1.6;
@@ -364,8 +381,7 @@ button[type="submit"]:hover {
 .parte-azul {
   width: 40%;
   padding: 50px 45px;
-
-  background: var(--azul);
+  background: linear-gradient(to top, #000000, #122E4D);
 }
 
 .formulario {
@@ -440,7 +456,7 @@ textarea {
 
 .barra_superior {
     font-family: 'Arial', sans-serif;
-    background-color: #122E4D;
+    background: var(--azul);
     color: white;
     padding: 0 40px;
     display: flex;
@@ -458,6 +474,7 @@ textarea {
 
 .logo img {
   width: auto;
+  width: 120px;
 }
 
 .logo:hover {
@@ -507,13 +524,12 @@ textarea {
 
 .Final_Pagina {
     font-family: 'Arial', sans-serif;
-    background-color: #122E4D;
+    background: var(--azul);
     color: white;
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #122E4D;
 }
 
 .Final_Pagina .navegaçao {
@@ -542,6 +558,11 @@ textarea {
     align-items: center;
 }
 
+.logo2 img{
+  width: 200px;
+  height: auto;
+}
+
 .Final_Pagina .logo2 {
     display: flex;
     flex-direction: column;
@@ -556,7 +577,6 @@ textarea {
   max-width: 200px;
 }
 
-<<<<<<< HEAD
 /* Atualização Javascript */
 
 .popup {
@@ -736,11 +756,15 @@ textarea {
 body.dark-mode,
 body.dark-mode .barra_superior,
 body.dark-mode .passos,
-body.dark-mode .parte-azul,
 body.dark-mode .Final_Pagina,
 body.dark-mode .popup-content{
-  background: #121212;
-  border-top: #121212;
+  background: linear-gradient(to right, #000000, #121212);
+  border-bottom: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .parte-azul{
+  background: linear-gradient(to top, #000000, #121212);
   border-bottom: #121212;
   color: #e0e0e0;
 }
@@ -755,20 +779,19 @@ body.dark-mode .clientes h2 {
 /* Fundo da parte dos Cards */
 body.dark-mode .beneficios,
 body.dark-mode .clientes{
-  background: #1a1a1a;
-  border-top: #121212;
+  background: linear-gradient(to right, #000000, #1a1a1a);
 }
 
 /* Fundo dos cards */
 body.dark-mode .card,
 body.dark-mode .depoimento,
 body.dark-mode #prosseguir {
-  background: #2a2a2a;
+  background: #1b1b1b;
   border-color: #3a3a3a;
 }
 
 body.dark-mode .card .icone{
-  background: #121212;
+  background: linear-gradient(to right, #000000, #121212);
 }
 
 /* Letras do Card */
@@ -807,14 +830,14 @@ body.dark-mode .texto-banner p {
 
 /* Botão "Ver Beneficios" */
 body.dark-mode .btn-branco {
-  background: #2a2a2a;
+  background: linear-gradient(to right, #000000, #2a2a2a);;
   color: #e0e0e0;
   border-color: #555;
 }
 
 /* Formulario */
 body.dark-mode .formulario {
-  background: #1e1e1e;
+  background: linear-gradient(to right, #000000, #1e1e1e);
 }
 
 body.dark-mode .campos input,
@@ -836,10 +859,70 @@ body.dark-mode .depoimento p {
 
 body.dark-mode .depoimento strong {
   color: #e0e0e0;
-=======
-.logo2 img {
-  width: 200px;
->>>>>>> 5390c5d318f603d483a9a526611b7c377b9f136d
+}
+
+/* Acordeão Dark Mode */
+body.dark-mode .accordion-header {
+    background: linear-gradient(to right, #000000, #2a2a2a);;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .accordion-content {
+    background: linear-gradient(to right, #000000, #1e1e1e);;
+    color: #ccc;
+}
+
+/* Estilo básico do Acordeão */
+.accordion {
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* HEADER */
+.accordion-header {
+    background-color: #f8f9fa;
+    color: #333;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-header:hover {
+    background-color: #e9ecef;
+}
+
+/* ÍCONE */
+.accordion-header::after {
+    content: '+';
+    float: right;
+}
+
+.accordion-header.active::after {
+    content: '-';
+}
+
+/* CONTENT (ANIMAÇÃO REAL) */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background-color: white;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-content.open {
+    max-height: 200px;
+    padding: 15px;
 }
 
 @media (max-width: 768px) {
@@ -976,54 +1059,14 @@ body.dark-mode .depoimento strong {
   .redes-sociais {
     justify-content: center;
   }
-}
 
-/* Estilo básico do Acordeão */
-.accordion {
-    max-width: 600px;
-    margin: 20px auto; /* Centraliza o acordeão */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-}
+  /* ACORDEÃO */
+    .accordion-header {
+    font-size: 16px;
+    padding: 18px;
+  }
 
-.accordion-header {
-    background-color: #f8f9fa;
-    color: #333;
-    cursor: pointer;
-    padding: 15px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.4s;
-    border-bottom: 1px solid #ddd;
-}
-
-.accordion-header:hover {
-    background-color: #e9ecef;
-}
-
-.accordion-content {
-    display: none; /* Esconde o conteúdo por padrão */
-    padding: 15px;
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-}
-
-.accordion-header::after {
-    content: '+';
-    float: right;
-}
-
-.accordion-header.active::after {
-    content: '-';
-}
-
-.accordion-content {
-    display: none; /* Isso garante que comece fechado */
-    padding: 15px;
-    background-color: white;
+  .accordion-content {
+    font-size: 14px;
+  }
 }
